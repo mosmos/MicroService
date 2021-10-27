@@ -10,7 +10,7 @@ env:
   DOCKER_IMAGE_PLATFORM: linux/amd64,linux/arm/v7
   BUILD_NUMBER: ${{ github.sha }}
   ASPNETCORE_ENVIRONMENT: CloudRun
-  TEMP_EV: 'Just to run build Workflow 5'
+  TEMP_EV: 'Just to run build Workflow 6'
 
 on: 
   push:
