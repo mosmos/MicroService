@@ -1,14 +1,12 @@
 FROM osgeo/gdal
 
-ADD scripts/ /scripts
-WORKDIR /scripts
-COPY /scripts/app.py ./
-CMD python app.py path_to_geojson path_to_shapefile
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./script/app.py  /script/app.py
+COPY ./script/from_shapefile  /script/from_shapefile
+COPY ./script/to_GeoJSON  /script/to_GeoJSON 
 
+WORKDIR /script
 
+ENTRYPOINT [ "python" ]
 
-
-
-#USER root
-#RUN chmod +x /scripts/app.sh
-#ENTRYPOINT ["/scripts/app.sh"]
+CMD [ "app.py" ]
