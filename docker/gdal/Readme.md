@@ -16,6 +16,10 @@ https://github.com/OSGeo/gdal
 ├── gdal
 │   ├── Dockerfile  
 |   |
-│   └── scripts
-│       └── app.sh   
+│   └── scripts\
+│       └── app.py
+│       ├── from_shapefile\  
+│       |   └── *.shp
+│       └── to_GeoJSON \  
+│           └── *.json
 ```
